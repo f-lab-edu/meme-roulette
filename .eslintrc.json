@@ -1,0 +1,18 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-inline-comments": "off", // Disable the rule that disables inline comments
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  },
+  "env": {
+    // 전역 객체 접근 가능하도록 설정
+    "browser": true,
+    "node": true
+  }
+}
