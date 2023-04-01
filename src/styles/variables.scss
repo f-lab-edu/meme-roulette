@@ -1,0 +1,34 @@
+$color-grey: #fafafa;
+$color-blue: #0095f6;
+$color-navy: #385085;
+$color-black: black;
+$color-white: white;
+$color-border-grey: #dbdbdb;
+$color-dark-grey: #a0a0a0;
+
+$font-small: 8px;
+$font-regular: 16px;
+$font-medium: 32px;
+$font-large: 48px;
+$font-xlarge: 56px;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSpacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin button {
+  background-color: transparent;
+  color: $color-blue;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
