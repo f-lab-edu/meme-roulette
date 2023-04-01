@@ -5,6 +5,7 @@ env/
 *.md
 **/.sass-cache
 **/.sass-cache/*
+.eslintcache
 
 ### macOS ###
 # General
