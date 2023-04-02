@@ -45,7 +45,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new Dotenv({ path: path.resolve(__dirname, './env/.env') }),
+    new Dotenv({ path: path.resolve(__dirname, 'env/.env') }),
     new webpack.ProgressPlugin(),
   ],
 

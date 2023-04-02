@@ -36,7 +36,7 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash:8].css',
     }),
     new Dotenv({
-      path: path.resolve(__dirname, './env/.env.development'),
+      path: path.resolve(__dirname, 'env/.env.production'),
     }),
   ],
 
