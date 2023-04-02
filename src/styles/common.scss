@@ -1,20 +1,11 @@
 @import './variables.scss';
 
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./../assets/fonts/NotoSansKR.woff2') format('woff2'),
-    url('./../assets/fonts/NotoSansKR.woff') format('woff'),
-    url('./../assets/fonts/NotoSansKR.eot') format('embedded-opentype');
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 input:focus {
