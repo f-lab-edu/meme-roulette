@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended", "prettier"],
   "rules": {
     "prettier/prettier": ["error"],
     "no-inline-comments": "off", // Disable the rule that disables inline comments
@@ -11,8 +11,11 @@
     ]
   },
   "env": {
-    // 전역 객체 접근 가능하도록 설정
     "browser": true,
+    "es2022": true,
     "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
   }
 }

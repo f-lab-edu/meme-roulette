@@ -21,6 +21,7 @@ module.exports = {
             presets: [
               ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }],
             ],
+            cacheDirectory: true,
           },
         },
       },
@@ -44,7 +45,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new Dotenv(),
+    new Dotenv({ path: path.resolve(__dirname, './env/.env') }),
     new webpack.ProgressPlugin(),
   ],
 

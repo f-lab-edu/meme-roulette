@@ -33,7 +33,7 @@ module.exports = merge(common, {
 
   plugins: [
     new Dotenv({
-      path: path.resolve(__dirname, './.env.development'),
+      path: path.resolve(__dirname, './env/.env.development'),
     }),
   ],
 });
