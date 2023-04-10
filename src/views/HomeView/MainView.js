@@ -5,9 +5,11 @@ import '../../styles/mainView.scss';
 import { mainContents } from '../../constants';
 
 export default class MainView extends View {
-  constructor($main) {
-    super($main);
+  constructor() {
+    super(qs('#main-view-wrapper'));
+
     this.template = new Template();
+    this.render();
     this.bindEvents();
   }
 
@@ -30,7 +32,7 @@ export default class MainView extends View {
 
 class Template {
   getMain() {
-    return `        
+    return `      
         <h1>FIND YOUR MEME</h1>
         <div class="image-wrap">
         <img

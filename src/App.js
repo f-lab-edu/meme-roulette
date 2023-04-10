@@ -24,7 +24,7 @@ class App {
 
   navigate(url) {
     const page = routes.find(route => route.path === url).view;
-    page(this.$main);
+    page();
   }
 }
 export default App;
