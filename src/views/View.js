@@ -8,10 +8,9 @@ export default class View {
     return this;
   }
 
-  render(template) {
-    this.element.innerHTML = template;
+  render(template, target = this.element) {
+    target.innerHTML = template;
   }
-
   hide() {
     this.element.style.display = 'none';
     return this;
