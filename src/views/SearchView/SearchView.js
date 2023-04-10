@@ -1,8 +1,8 @@
 import Store from '../../models/Store';
 
-const tag = '[reaction]';
+const tag = '[search]';
 
-const ReactionView = () => {
+const SearchView = () => {
   console.log(tag);
 
   const store = new Store();
@@ -12,4 +12,4 @@ const ReactionView = () => {
   //   new Controller(store, views);
 };
 
-export default ReactionView;
+export default SearchView;

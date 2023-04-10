@@ -1,9 +1,9 @@
 import HomeView from './views/HomeView/HomeView';
 import RandomView from './views/RandomView/RandomView';
-import ReactionView from './views/ReactionView/ReactionView';
+import SearchView from './views/SearchView/SearchView';
 import TrendingView from './views/TrendingView/TrendingView';
 
-const routes = () => [
+const routes = [
   { path: '/', label: 'HOME', view: HomeView },
   {
     path: '/trending',
@@ -16,9 +16,9 @@ const routes = () => [
     view: RandomView,
   },
   {
-    path: '/reaction',
-    label: 'REACTION',
-    view: ReactionView,
+    path: '/search',
+    label: 'SEARCH',
+    view: SearchView,
   },
 ];
 
