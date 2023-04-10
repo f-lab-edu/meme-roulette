@@ -1,8 +1,15 @@
 $color-black: #313030;
 $color-orange: #fbb04c;
+$color-violet: #8490C8;
+$color-pink: #FF8671;
+$color-gray: #D5D5D5;
+$color-dark-gray: #595552;
+$color-pure-black : #8490C8;
+
 
 $font-small: 15px;
 $font-regular: 18px;
+$font-xl-regular: 25px;
 $font-medium: 35px;
 $font-large: 48px;
 $font-xlarge: 56px;
@@ -17,21 +24,4 @@ $font-xlarge: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-@mixin button {
-  width: 200px;
-  padding: 20px 40px;
-  background-color: transparent;
-  color: $color-black;
-  border: 2px solid $color-black;
-  border-radius: 50%;
-  font-size: $font-small;
-  font-weight: 700;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $color-black;
-    color: $color-orange;
-  }
 }

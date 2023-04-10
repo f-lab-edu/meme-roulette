@@ -7,10 +7,9 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
   width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   color: $color-black;
-  background-color: $color-orange;
+
 }
 
 input:focus {
@@ -25,8 +24,4 @@ a {
 
 a:visited {
   color: $color-black;
-}
-
-button {
-  @include button();
 }
