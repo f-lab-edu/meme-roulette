@@ -1,14 +1,9 @@
-$color-grey: #fafafa;
-$color-blue: #0095f6;
-$color-navy: #385085;
-$color-black: black;
-$color-white: white;
-$color-border-grey: #dbdbdb;
-$color-dark-grey: #a0a0a0;
+$color-black: #313030;
+$color-orange: #fbb04c;
 
-$font-small: 8px;
-$font-regular: 16px;
-$font-medium: 32px;
+$font-small: 15px;
+$font-regular: 18px;
+$font-medium: 35px;
 $font-large: 48px;
 $font-xlarge: 56px;
 
@@ -25,10 +20,18 @@ $font-xlarge: 56px;
 }
 
 @mixin button {
+  width: 200px;
+  padding: 20px 40px;
   background-color: transparent;
-  color: $color-blue;
-  outline: none;
-  border: none;
+  color: $color-black;
+  border: 2px solid $color-black;
+  border-radius: 50%;
+  font-size: $font-small;
   font-weight: 700;
   cursor: pointer;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-orange;
+  }
 }
