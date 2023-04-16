@@ -8,6 +8,7 @@ module.exports = merge(common, {
 
   devServer: {
     static: './dist',
+    historyApiFallback: true,
   },
 
   module: {
