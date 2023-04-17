@@ -11,11 +11,11 @@ export default class SearchResultView extends View {
   }
 
   showResult(searchResult) {
-    if (searchResult.length < 1) {
-      super.render(emptyTemplate());
-      return;
-    }
-    super.render(searchResultTemplate(searchResult));
+    super.render(
+      searchResult.length > 0
+        ? searchResultTemplate(searchResult)
+        : emptyTemplate()
+    );
   }
 
   showSearching() {

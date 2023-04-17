@@ -7,7 +7,19 @@ export default class SearchModel {
   }
 
   setRecentKeywordList(keyword) {
+    if (
+      this.recentKeywordList.length > 0 &&
+      this.recentKeywordList[0].keyword === keyword
+    )
+      return;
+
     const newItem = { keyword, key: makeRandomKey(5) };
+    const existingIndex = this.recentKeywordList.findIndex(
+      item => item.keyword === keyword
+    );
+    if (existingIndex >= 0) {
+      this.recentKeywordList.splice(existingIndex, 1);
+    }
     this.recentKeywordList.unshift(newItem);
   }
 
