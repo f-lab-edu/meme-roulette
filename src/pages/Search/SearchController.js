@@ -10,6 +10,11 @@ export default class SearchController {
     this.init();
   }
 
+  addHandlers() {
+    this.components.searchFormView.addHandler(this.handleSubmit);
+    this.components.recentKeywordListView.addHandler(this.handleDelete);
+  }
+
   // 화살표 함수로 만들어 인스턴스에 자동 binding 되도록 함.
   handleSubmit = e => {
     e.preventDefault();
@@ -21,7 +26,7 @@ export default class SearchController {
   controlRecentKeyword(keyword) {
     if (!keyword) return;
     this.model.setRecentKeywordList(keyword);
-    this.components.recentKeywordListView.show(this.model.recentKeywordList);
+    this.components.recentKeywordListView.render(this.model.recentKeywordList);
   }
 
   async controlSearchResult(keyword) {
@@ -30,6 +35,13 @@ export default class SearchController {
     searchResult && this.components.searchResultView.showResult(searchResult);
   }
 
+  handleDelete = e => {
+    if (e.target.className !== 'btn-delete') return;
+    const btnKey = e.target.dataset.key;
+    this.model.deleteKeyword(btnKey);
+    this.components.recentKeywordListView.render(this.model.recentKeywordList);
+  };
+
   init() {
     this.view.renderPage();
     this.components = {
@@ -37,6 +49,6 @@ export default class SearchController {
       recentKeywordListView: new RecentKeywordListView(),
       searchResultView: new SearchResultView(),
     };
-    this.components.searchFormView.addHandler(this.handleSubmit);
+    this.addHandlers();
   }
 }

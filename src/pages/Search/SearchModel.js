@@ -22,13 +22,17 @@ export default class SearchModel {
       },
     });
 
-    console.log(data.data);
-
     const searchResult = data.data.map(({ id, images }) => ({
       id,
       gifUrl: images.fixed_width.url,
     }));
 
     return searchResult;
+  }
+
+  deleteKeyword(key) {
+    this.recentKeywordList = this.recentKeywordList.filter(
+      item => item.key !== key
+    );
   }
 }
