@@ -40,6 +40,7 @@ export const searchResultTemplate = searchedGifList => {
       ({ id, gifUrl }) =>
         `
       <div class="gif-wrapper" data-id=${id}>
+      <div class="layer"></div>
       <img src=${gifUrl} alt="giphy"  />
       </div>`
     )
