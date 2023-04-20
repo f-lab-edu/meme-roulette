@@ -7,11 +7,7 @@ export default class SearchModel {
   }
 
   setRecentKeywordList(keyword) {
-    if (
-      this.recentKeywordList.length > 0 &&
-      this.recentKeywordList[0].keyword === keyword
-    )
-      return;
+    if (this.recentKeywordList[0]?.keyword === keyword) return;
 
     const newItem = { keyword, key: makeRandomKey(5) };
     const existingIndex = this.recentKeywordList.findIndex(
@@ -23,18 +19,24 @@ export default class SearchModel {
     this.recentKeywordList.unshift(newItem);
   }
 
-  async searchGifs(keyword) {
-    const { data } = await axiosClient.get('/search', {
-      params: {
-        q: keyword,
-        tag: 'hello',
-        rating: 'g',
-        lang: 'ko',
-        limit: 25,
-      },
-    });
+  async fetchSearch(keyword) {
+    return axiosClient
+      .get('/search', {
+        params: {
+          q: keyword,
+          tag: 'hello',
+          rating: 'g',
+          lang: 'ko',
+          limit: 25,
+        },
+      })
+      .then(res => res.data);
+  }
 
-    const searchResult = data.data.map(({ id, images }) => ({
+  async searchGifs(keyword) {
+    const { data } = await this.fetchSearch(keyword);
+
+    const searchResult = data.map(({ id, images }) => ({
       id,
       gifUrl: images.fixed_width.url,
     }));
