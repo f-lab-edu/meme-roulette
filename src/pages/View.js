@@ -15,8 +15,8 @@ export default class View {
     return this;
   }
 
-  show(target = this.element) {
-    target.style.display = 'visible';
+  show(value = 'block') {
+    this.element.style.display = value;
     return this;
   }
 }

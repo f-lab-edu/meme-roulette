@@ -18,7 +18,8 @@
     "no-throw-literal": "off",
     "no-constructor-return": "off",
     "no-param-reassign": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-unused-expressions": "off"
   },
   "env": {
     "browser": true,
