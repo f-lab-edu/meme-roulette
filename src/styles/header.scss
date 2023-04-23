@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8eee0;
+  padding: 20px 40px;
+
+  .logo {
+    font-size: $font-medium;
+    font-weight: 700;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      display: inline-block;
+      padding: 0 30px;
+      font-size: $font-regular;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
