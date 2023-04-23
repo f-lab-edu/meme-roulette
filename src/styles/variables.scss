@@ -1,16 +1,14 @@
-$color-black: #313030;
-$color-orange: #fbb04c;
-$color-violet: #8490C8;
-$color-pink: #FF8671;
-$color-gray: #D5D5D5;
-$color-dark-gray: #595552;
-$color-pure-black : #8490C8;
+$color-grey: #fafafa;
+$color-blue: #0095f6;
+$color-navy: #385085;
+$color-black: black;
+$color-white: white;
+$color-border-grey: #dbdbdb;
+$color-dark-grey: #a0a0a0;
 
-
-$font-small: 15px;
-$font-regular: 18px;
-$font-xl-regular: 25px;
-$font-medium: 35px;
+$font-small: 8px;
+$font-regular: 16px;
+$font-medium: 32px;
 $font-large: 48px;
 $font-xlarge: 56px;
 
@@ -24,4 +22,13 @@ $font-xlarge: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@mixin button {
+  background-color: transparent;
+  color: $color-blue;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
 }

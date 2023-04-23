@@ -12,13 +12,7 @@
     "consistent-return": "off",
     "lines-between-class-members": "off",
     "no-new": "off",
-    "class-methods-use-this": "off",
-    "no-restricted-globals": "off",
-    "import/no-cycle": "off",
-    "no-throw-literal": "off",
-    "no-constructor-return": "off",
-    "no-param-reassign": "off",
-    "no-plusplus": "off"
+    "class-methods-use-this": "off"
   },
   "env": {
     "browser": true,
@@ -27,12 +21,5 @@
   },
   "parserOptions": {
     "ecmaVersion": "latest"
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack.common.js"
-      }
-    }
   }
 }

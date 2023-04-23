@@ -9,7 +9,6 @@ module.exports = {
     filename: 'src/[name].[chunkhash:8].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
   },
   module: {
     rules: [
@@ -46,15 +45,5 @@ module.exports = {
   stats: {
     preset: 'minimal',
     errorDetails: true,
-  },
-
-  resolve: {
-    alias: {
-      src: path.resolve(__dirname, './src'),
-      styles: path.resolve(__dirname, './src/styles'),
-      pages: path.resolve(__dirname, './src/pages'),
-      utils: path.resolve(__dirname, './src/utils'),
-      libs: path.resolve(__dirname, './src/libs'),
-    },
   },
 };
