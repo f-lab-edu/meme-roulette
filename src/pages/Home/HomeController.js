@@ -8,7 +8,8 @@ export default class HomeController {
   }
 
   async init() {
-    const gifUrl = await this.model.getMainGifUrl();
+    const mainGifData = await this.model.toJson();
+    const gifUrl = mainGifData.images.original.url;
     this.view.render(gifUrl);
     this.view.addHandler(this.handleClick);
   }

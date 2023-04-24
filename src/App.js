@@ -1,5 +1,5 @@
 import LayoutView from 'pages/components/Layout/LayoutView';
-import Router from './Router';
+import Router from 'router';
 
 export default class App {
   constructor($body) {

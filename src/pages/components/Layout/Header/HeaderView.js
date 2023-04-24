@@ -15,7 +15,7 @@ export default class HeaderView extends View {
     super.render(template());
   }
 
-  async bindEvents() {
+  bindEvents() {
     document
       .querySelector('ul')
       .addEventListener('click', event => this.handleNavigate(event));
