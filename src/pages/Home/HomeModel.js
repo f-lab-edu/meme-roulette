@@ -1,15 +1,27 @@
 import axiosClient from 'libs/axios';
 
 export default class HomeModel {
-  async getMainGifUrl() {
-    const { data } = await axiosClient.get('/random', {
-      params: {
-        tag: 'hello',
-        rating: 'g',
-      },
-    });
+  constructor() {
+    this.init();
+  }
 
-    const gifUrl = data.data.images.original.url;
-    return gifUrl;
+  async fetchGif() {
+    return axiosClient
+      .get('/random', {
+        params: {
+          tag: 'hello',
+          rating: 'g',
+        },
+      })
+      .then(res => res.data);
+  }
+
+  async toJson() {
+    const { data } = await this.fetchGif();
+    return data;
+  }
+
+  init() {
+    this.toJson();
   }
 }
