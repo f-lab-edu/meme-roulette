@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'src/[name].[chunkhash:8].js',
     path: path.resolve(__dirname, 'dist'),
@@ -14,12 +14,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
+              ['@babel/preset-typescript'],
               ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }],
             ],
             cacheDirectory: true,
@@ -49,12 +50,14 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['.ts', '.js'],
     alias: {
       src: path.resolve(__dirname, './src'),
       styles: path.resolve(__dirname, './src/styles'),
       pages: path.resolve(__dirname, './src/pages'),
       utils: path.resolve(__dirname, './src/utils'),
       libs: path.resolve(__dirname, './src/libs'),
+      common: path.resolve(__dirname, './src/common'),
     },
   },
 };

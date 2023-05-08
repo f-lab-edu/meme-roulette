@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "styles/*": ["src/styles/*"],
+      "pages/*": ["src/pages/*"],
+      "utils/*": ["src/utils/*"]
+    },
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
