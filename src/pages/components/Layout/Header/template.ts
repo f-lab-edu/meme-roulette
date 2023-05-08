@@ -14,7 +14,7 @@ const ROUTES = [
   },
 ];
 
-const template = () => {
+const template: any = () => {
   return `
     <h1 class="logo">
       <a href="/">meme roulette</a>

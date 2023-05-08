@@ -1,4 +1,4 @@
-import View from 'src/pages/View';
+import View from 'common/View';
 import template from './template';
 import './homeView.scss';
 

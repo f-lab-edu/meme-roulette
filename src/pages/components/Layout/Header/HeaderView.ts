@@ -1,10 +1,10 @@
 import { navigate } from 'src/utils/helpers';
 import 'src/styles/header.scss';
-import View from 'src/pages/View';
+import View from 'src/common/View';
 import template from './template';
 
 export default class HeaderView extends View {
-  constructor($header) {
+  constructor($header: HTMLElement) {
     super($header);
 
     this.render();
@@ -17,13 +17,13 @@ export default class HeaderView extends View {
 
   bindEvents() {
     document
-      .querySelector('ul')
+      .querySelector('ul')!
       .addEventListener('click', event => this.handleNavigate(event));
   }
 
-  handleNavigate(event) {
+  handleNavigate(event: MouseEvent) {
     event.preventDefault();
-    const url = event.target.getAttribute('href');
+    const url = (event.target as HTMLAnchorElement).getAttribute('href');
     navigate(url);
   }
 }

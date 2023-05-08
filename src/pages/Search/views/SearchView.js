@@ -1,4 +1,4 @@
-import View from 'pages/View';
+import View from 'src/common/View.ts';
 import template from './template';
 import './searchView.scss';
 

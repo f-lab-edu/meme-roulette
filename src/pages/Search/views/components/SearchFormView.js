@@ -1,4 +1,4 @@
-import View from 'src/pages/View';
+import View from 'src/common/View.ts';
 
 export default class SearchFormView extends View {
   constructor() {

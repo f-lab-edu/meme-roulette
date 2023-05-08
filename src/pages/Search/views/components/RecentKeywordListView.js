@@ -1,4 +1,4 @@
-import View from 'src/pages/View';
+import View from 'src/common/View.ts';
 import { keywordListTemplate } from '../template';
 
 export default class RecentKeywordListView extends View {
