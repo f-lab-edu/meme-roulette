@@ -1,22 +1,22 @@
 export default class View {
-  constructor(element) {
+  private element: HTMLElement;
+
+  constructor(element: HTMLElement) {
     if (!element) throw 'no element';
 
     this.element = element;
     return this;
   }
 
-  render(template, target = this.element) {
+  render(template: string, target: HTMLElement = this.element) {
     target.innerHTML = template;
   }
 
   hide() {
     this.element.style.display = 'none';
-    return this;
   }
 
   show(value = 'block') {
     this.element.style.display = value;
-    return this;
   }
 }

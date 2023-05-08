@@ -1,8 +1,16 @@
-import { HomeController, HomeView, HomeModel } from 'pages/Home';
-import { SearchController, SearchModel, SearchView } from 'pages/Search';
+import { HomeController, HomeView, HomeModel } from './pages/Home';
+import { SearchController, SearchModel, SearchView } from './pages/Search';
+
+interface IRoute {
+  path: string;
+  controller: () => void;
+}
 
 export default class Router {
-  constructor($body) {
+  private $body: HTMLElement;
+  private routes: IRoute[];
+
+  constructor($body: HTMLElement) {
     this.$body = $body;
     this.routes = this.createRoutes();
     this.createRouter();
