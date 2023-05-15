@@ -1,12 +1,19 @@
 import axiosClient from 'libs/axios';
 import makeRandomKey from 'utils/makeRandomKey';
+import {
+  IFetchSearchData,
+  IRecentKeywordList,
+  ISearchResult,
+} from './searchType';
 
 export default class SearchModel {
+  recentKeywordList: IRecentKeywordList[];
+
   constructor() {
     this.recentKeywordList = [];
   }
 
-  setRecentKeywordList(keyword) {
+  setRecentKeywordList(keyword: string): void {
     if (this.recentKeywordList[0]?.keyword === keyword) return;
 
     const newItem = { keyword, key: makeRandomKey(5) };
@@ -19,7 +26,7 @@ export default class SearchModel {
     this.recentKeywordList.unshift(newItem);
   }
 
-  async fetchSearch(keyword) {
+  async fetchSearch(keyword: string): Promise<IFetchSearchData[]> {
     return axiosClient
       .get('/search', {
         params: {
@@ -30,21 +37,19 @@ export default class SearchModel {
           limit: 25,
         },
       })
-      .then(res => res.data);
+      .then(res => res.data.data);
   }
 
-  async searchGifs(keyword) {
-    const { data } = await this.fetchSearch(keyword);
+  async searchGifs(keyword: string): Promise<ISearchResult[]> {
+    const dataArr = await this.fetchSearch(keyword);
 
-    const searchResult = data.map(({ id, images }) => ({
+    return dataArr.map(({ id, images }) => ({
       id,
-      gifUrl: images.fixed_width.url,
+      gifUrl: images?.fixed_width.url,
     }));
-
-    return searchResult;
   }
 
-  deleteKeyword(key) {
+  deleteKeyword(key: string) {
     this.recentKeywordList = this.recentKeywordList.filter(
       item => item.key !== key
     );
