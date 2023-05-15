@@ -1,14 +1,24 @@
-import { HomeController, HomeView, HomeModel } from 'pages/Home';
-import { SearchController, SearchModel, SearchView } from 'pages/Search';
+import { HomeController, HomeView, HomeModel } from './pages/Home';
+import { SearchController, SearchModel, SearchView } from './pages/Search';
+
+interface IRoute {
+  path: string;
+  controller: () => void;
+}
 
 export default class Router {
-  constructor($body) {
+  $body: HTMLDivElement;
+  routes: IRoute[];
+
+  constructor($body: HTMLDivElement) {
     this.$body = $body;
+
     this.routes = this.createRoutes();
+
     this.createRouter();
   }
 
-  createRoutes = () => {
+  createRoutes = (): IRoute[] => {
     const homeModel = new HomeModel();
     const homeView = new HomeView();
 
@@ -29,16 +39,16 @@ export default class Router {
     ];
   };
 
-  createRouter() {
+  createRouter(): void {
     window.addEventListener('DOMContentLoaded', () => this.navigate());
     window.addEventListener('popstate', () => this.navigate());
     this.$body.addEventListener('@navigate', () => this.navigate());
   }
 
-  navigate() {
-    const { controller: createPage } = this.routes.find(
+  navigate(): void {
+    const currentRoute = this.routes.find(
       route => route.path === location.pathname
     );
-    createPage();
+    currentRoute?.controller();
   }
 }
