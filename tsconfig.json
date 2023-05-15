@@ -6,13 +6,14 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "styles/*": ["src/styles/*"],
-      "pages/*": ["src/pages/*"],
-      "utils/*": ["src/utils/*"]
+      "src/*": ["./src/*"],
+      "styles/*": ["./src/styles/*"],
+      "pages/*": ["./src/pages/*"],
+      "utils/*": ["./src/utils/*"],
+      "libs/*": ["./src/libs/*"],
+      "common/*": ["./src/common/*"]
     },
     "strict": true,
-    "allowImportingTsExtensions": true,
     "noEmit": true,
     "allowJs": true,
     "checkJs": true,
