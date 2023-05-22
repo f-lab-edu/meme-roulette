@@ -4,7 +4,7 @@ const MAIN_CONTENTS = [
   { title: 'Search Memes', koreanTitle: '검색어로 짤 찾기', path: '/search' },
 ];
 
-const template = gifUrl => {
+const template = (gifUrl: string) => {
   return `
     <div id="home">
     <h1>FIND YOUR MEME</h1>

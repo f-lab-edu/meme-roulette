@@ -1,22 +1,25 @@
 export default class View {
-  constructor(element) {
+  element?: HTMLElement | HTMLFormElement | HTMLDivElement;
+
+  constructor(element: HTMLElement | HTMLFormElement | HTMLDivElement) {
     if (!element) throw 'no element';
 
     this.element = element;
     return this;
   }
 
-  render(template, target = this.element) {
+  render(template: string, target = this.element) {
+    if (!target) return;
     target.innerHTML = template;
   }
 
   hide() {
+    if (!this.element) return;
     this.element.style.display = 'none';
-    return this;
   }
 
   show(value = 'block') {
+    if (!this.element) return;
     this.element.style.display = value;
-    return this;
   }
 }

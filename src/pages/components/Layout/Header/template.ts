@@ -30,7 +30,7 @@ const template = () => {
       ).join('')}
       </ul>
     </nav>
-    `;
+    ` as string;
 };
 
 export default template;

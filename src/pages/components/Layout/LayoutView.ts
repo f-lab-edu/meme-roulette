@@ -1,14 +1,18 @@
 import HeaderView from './Header/HeaderView';
 
 export default class LayoutView {
-  constructor($body) {
+  $body: HTMLDivElement;
+  $header: HTMLElement;
+  $main: HTMLElement;
+
+  constructor($body: HTMLDivElement) {
     this.$body = $body;
     this.$header = document.createElement('header');
     this.$main = document.createElement('main');
     this.render();
   }
 
-  render() {
+  render(): void {
     this.$body.appendChild(this.$header);
     this.$body.appendChild(this.$main);
 
