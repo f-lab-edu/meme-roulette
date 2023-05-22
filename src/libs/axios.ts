@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
-const axiosClient = axios.create({
+const axiosClient: AxiosInstance = axios.create({
   baseURL: 'https://api.giphy.com/v1/gifs',
   timeout: 8000,
   headers: {
