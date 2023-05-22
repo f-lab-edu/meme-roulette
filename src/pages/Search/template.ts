@@ -1,3 +1,5 @@
+import { IRecentKeywordList, ISearchResult } from './searchType';
+
 const template = () => {
   return `
         <div id="search-view-wrapper">
@@ -11,7 +13,9 @@ const template = () => {
       `;
 };
 
-export const keywordListTemplate = keywordList => {
+export const keywordListTemplate = (
+  keywordList: IRecentKeywordList[]
+): string => {
   return `
   <span class="title">최근검색어</span>
   <ul class="list-wrapper">
@@ -34,7 +38,7 @@ export const emptyTemplate = () => {
   return `<div class="searching">검색 결과가 없습니다.</div>`;
 };
 
-export const searchResultTemplate = searchedGifList => {
+export const searchResultTemplate = (searchedGifList: ISearchResult[]) => {
   return searchedGifList
     .map(
       ({ id, gifUrl }) =>
